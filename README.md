@@ -1,101 +1,37 @@
-# E-commerce Back End Starter Code
+# ECommerce Back-end
 
-Category
+## Link to Video Demonstration
 
-id
 
-Integer
+## Table of Contents: 
+[Description](#description)
 
-Doesn't allow null values
+[Installation](#installation)
 
-Set as primary key
+[Usage](#usage)
 
-Uses auto increment
+[Contributions](#contributions)
 
-category_name
+[License](#license)
 
-String
+[Questions](#questions)
 
-Doesn't allow null values
+## Description: 
+Node application that utilizes sequelize to create new data entries into a database that is categorized with the help of models and api routes, to get existing data, post new data, delete existing data.
 
-Product
+## Installation: 
+N/A
 
-id
+## Usage: 
+This app can be used to keep track of products and their categories in an easily accesible database.
 
-Integer
+## Contributions: 
+Julio Valdez
 
-Doesn't allow null values
+## License: 
 
-Set as primary key
+## Questions: 
+Github Username: https://github.com/darthcurtiscass
 
-Uses auto increment
 
-product_name
-
-String
-
-Doesn't allow null values
-
-price
-
-Decimal
-
-Doesn't allow null values
-
-Validates that the value is a decimal
-
-stock
-
-Integer
-
-Doesn't allow null values
-
-Set a default value of 10
-
-Validates that the value is numeric
-
-category_id
-
-Integer
-
-References the category model's id
-
-Tag
-
-id
-
-Integer
-
-Doesn't allow null values
-
-Set as primary key
-
-Uses auto increment
-
-tag_name
-
-String
-
-ProductTag
-
-id
-
-Integer
-
-Doesn't allow null values
-
-Set as primary key
-
-Uses auto increment
-
-product_id
-
-Integer
-
-References the product model's id
-
-tag_id
-
-Integer
-
-References the tag model's id
+Email: dylancurtiscassagnol@icloud.com

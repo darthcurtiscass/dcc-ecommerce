@@ -23,22 +23,29 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const newTag = await Tag.create({
-    newTag: {
-      id: req.body.id,
-      tag_name: req.body.tag_name
-    }
-  })
+  const newTag = await Tag.create(req.body)
+  //   {
+  //   newTag: {
+  //     id: req.body.id,
+  //     tag_name: req.body.tag_name
+  //   }
+  // })
   res.json(newTag)
   // create a new tag
 });
 
-router.put('/:id', (req, res) => {
-  // update a tag's name by its `id` value
+router.put('/:id', async (req, res) => {
+  const updateTag = await Tag.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  })
+  res.json(updateTag)
 });
-
-router.delete('/:id', (req, res) => {
-  // delete on tag by its `id` value
+// delete on tag by its `id` value
+router.delete('/:id', async (req, res) => {
+  const tagDelete = await Tag.destroy({ where: {id: req.params.id}})
+  res.json(tagDelete);
 });
 
 module.exports = router;
