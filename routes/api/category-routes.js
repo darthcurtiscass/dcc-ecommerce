@@ -30,13 +30,20 @@ router.post('/', async (req, res) => {
 });
 //update a category by its `id` value
 router.put('/:id', async (req, res) => {
-  const newCategory = await Category.update(req.body, {
-    where: {
-      id: req.params.id
-    }
-  })
-  return res.json(newCategory)
-});
+  try {
+    const newCategory = await Category.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    })
+    const response = req.body
+    console.log(newCategory)
+    return res.status(200).json( {message: "successfully updated category.", response})
+  } catch (error) {
+    res.status(400).json({message: 'Update unsuccessful', error})
+  }
+   
+})
 // delete a category by its `id` value
 router.delete('/:id', async (req, res) => {
   const newCategory = await Category.destroy({ where: {id: req.params.id}})
