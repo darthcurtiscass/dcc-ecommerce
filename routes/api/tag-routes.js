@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-  const tagData = await Tag.findOne({
+  const tagData = await Tag.findByPk(req.params.id, {
     include: Product
   })
   res.json(tagData)
@@ -40,6 +40,7 @@ router.put('/:id', async (req, res) => {
       id: req.params.id
     }
   })
+  // const editTag = updateTag.get({ plain: true});
   res.json(updateTag)
 });
 // delete on tag by its `id` value
